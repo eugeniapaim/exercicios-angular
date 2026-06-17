@@ -1,0 +1,53 @@
+<h2>Template aqui</h2>
+<h3>Text Interpolation</h3>
+<p>Olá, {{ name }}. Parabéns pelos {{ age }} anos!</p>
+<p>
+    É possivel colocar funções, condicionais, entre outras coisas dentro das chaves
+</p>
+<hr/>
+
+<h2>Property Binding</h2>
+<!-- Exemplo de property binding -->
+<button [disabled]="isDisabled">Clique aqui</button>
+
+<hr/>
+
+<h2>Attribute Binding</h2>
+<!-- Exemplo de attribute binding -->
+<input [value]="name" />
+<p [attr.title]="name" [attr.aria-label]="name">Fernanda</p>
+
+<hr/>
+
+<h2>Class & Style Binding</h2>
+<!-- Exemplo de class binding -->
+<p [class.backgroud-red]>{{ name }}</p>
+<p [style.text-decoration] = "isTextDecoration"> Text decoration</p>
+
+<hr/>
+
+<h2>Event Binding</h2>
+<!-- Exemplo de event binding -->
+ <button (click) = "sum()">+</button>
+ <button (click) = "sub()">-</button>
+
+ <input (keydown.shift.a) = "onKeyDown($event)">
+
+ <div style="background-color: lightgray; padding: 10px;" (mousemove) ="onMouseEvent($event)">Div com estilo</div>
+
+ <hr/>
+
+ <h2>Two-way Binding</h2>
+ <!-- Exemplo de two-way binding -->
+ <input [(ngModel)]="name" placeholder="Digite seu nome">
+ <h3>Olá, {{ name }}</h3>
+
+ <hr/>
+
+ <h2> Diretivas de atributos</h2>
+ <div [ngClass]="{'background-red': age > 18}">
+     {{ name }} tem {{ age }} anos. 
+     <br>
+     Se a idade for maior que 18, a classe background-red será aplicada, caso contrário, não será aplicada.
+    Classe condicional
+ </div>

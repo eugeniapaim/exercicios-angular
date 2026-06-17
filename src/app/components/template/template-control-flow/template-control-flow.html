@@ -1,0 +1,64 @@
+<h2>Control Flow</h2>
+
+<h3>SWITCH</h3>
+
+@switch (switchCondition) {
+    @case ('A') {
+        <p>Valor A</p>
+    }
+    @case ('B') {
+        <p>Valor B</p>
+    }
+    @case ('C') {
+        <p>Valor C</p>
+    }
+     @default {
+        <p>Dados não encontrados</p>
+    }
+
+}
+
+    <h3> IF</h3>
+    
+@if(loadingData$ | async; as data) {
+    <ul>
+        @for(item of data; track item) {
+            <li>{{ item }} </li>
+        }
+    </ul>
+    <p>Dados carregados: {{ data }}</p>
+}
+
+    <h3>FOR</h3>
+@for(
+    item of itens; track item.name;
+    let i = $index;
+    let count = $count;
+    let even = $even;
+    let first = $first;
+    let last = $last;
+    let odd = $odd;
+) {
+    <p>{{ item.name}}</p>
+    <p>index - {{ i }} (posição)</p>
+    <p>count - {{ count }} (quantos)</p>
+    <p>even - {{ even }} (é par)</p>
+    <p>first - {{ first }} (é o primeiro)</p>
+    <p>last - {{ last }} (é o último)</p>
+    <p>odd - {{ odd }} (é impar)</p>
+    <hr/>
+}
+
+<ul>
+    @for (item of itens; track item.name) {
+        <li>{{ item.name }} </li>
+    } @empty {
+        <p>Não há itens para exibir</p>
+    }
+</ul>
+
+<input #name type="text" placeholder="Digite um nome">
+
+<button (click) = "addNewName(name.value)">Adicionar</button>
+
+
