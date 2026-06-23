@@ -1,0 +1,8 @@
+<h2>Input & Output</h2>
+
+<app-inputComponent [inputName]="name()"></app-inputComponent>
+<app-outputComponent (outputName)="outputName.set($event)"></app-outputComponent>
+
+<p>
+    {{ outputName() }}
+</p>

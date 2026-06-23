@@ -8,6 +8,7 @@ import { TemplateBindingComponent } from './components/template/template-binding
 import { TemplateVariables } from './components/template/template-variables/template-variables'; */
 import { TemplateDeferrableViews } from "./components/template/template-deferrable-views/template-deferrable-views";
 import { TemplateSignals } from './components/template/template-signals/template-signals';
+import { Mae } from './components/comunicacao-entre-components/mae/mae';
 
 
 @Component({
@@ -15,9 +16,7 @@ import { TemplateSignals } from './components/template/template-signals/template
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
-    TemplateDeferrableViews,
-    TemplateSignals
+    RouterOutlet, Mae
 ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
