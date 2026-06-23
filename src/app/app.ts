@@ -9,6 +9,8 @@ import { TemplateVariables } from './components/template/template-variables/temp
 import { TemplateDeferrableViews } from "./components/template/template-deferrable-views/template-deferrable-views";
 import { TemplateSignals } from './components/template/template-signals/template-signals';
 import { Mae } from './components/comunicacao-entre-components/mae/mae';
+import { ReactiveForms } from './components/forms/reactive-forms/reactive-forms';
+import { TemplateDrivenForms } from './components/forms/template-driven-forms/template-driven-forms';
 
 
 @Component({
@@ -16,7 +18,9 @@ import { Mae } from './components/comunicacao-entre-components/mae/mae';
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet, Mae
+    RouterOutlet, 
+    ReactiveForms,
+    TemplateDrivenForms
 ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

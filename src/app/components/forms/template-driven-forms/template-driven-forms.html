@@ -1,0 +1,55 @@
+<h2>Template driven form</h2>
+
+<form action="" #form="ngForm" (ngSubmit)="submitForm(form)">
+    <label for="">
+        Nome:
+        <input type="text" name="inputName" #name="ngModel" [ngModel]="name.value" required>
+    </label>
+    <hr>
+    <p>
+        <!-- Mostra valor colocado no input -->
+        Value: {{name.value}}
+    </p>
+    <p>
+        <!-- Mostra se está válido: Ex: campo required está devidamente preenchido -->
+        Valid: {{name.valid}}
+    </p>
+    <p>
+        <!-- Se ja foi mexido -->
+        Dirty: {{name.dirty}}
+    </p>
+    <p>
+        <!-- Se já foi clicado -->
+        Touched: {{name.touched}}
+    </p>
+
+    <h2>Select</h2>
+    <select name="selectComidas" #comidas="ngModel" ngModel>
+        <option value="">Selecione um alimento </option>
+        @for(item of listaComidas(); track item){
+            <option [ngValue]="item">{{item.comida}} </option>
+        }
+    </select>
+
+    <hr>
+    <p>Comida: {{comidas.value?.comida}}</p>
+    <p>Valor: {{comidas.value?.preco}}</p>
+    <p>
+        <!-- Mostra se está válido: Ex: campo required está devidamente preenchido -->
+        Valid: {{comidas.valid}}
+    </p>
+    <p>
+        <!-- Se ja foi mexido -->
+        Dirty: {{comidas.dirty}}
+    </p>
+    <p>
+        <!-- Se já foi clicado -->
+        Touched: {{comidas.touched}}
+    </p>
+
+    <button [disabled]="!form.valid">Send</button>
+</form>
+
+<p>Form valid: {{form.valid}}</p>
+
+<p>Form value: {{form.value}}</p>
